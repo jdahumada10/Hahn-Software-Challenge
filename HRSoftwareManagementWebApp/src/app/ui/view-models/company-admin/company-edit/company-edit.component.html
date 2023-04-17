@@ -1,0 +1,98 @@
+<div class="outer-div">
+    <h1 class="title-text">Edit Company</h1>
+    <div class="container-fluid">
+      <form [formGroup]="createForm">
+        <mat-form-field
+          appearance="outline"
+          [matTooltip]="getNameErrorMessage()"
+          [matTooltipDisabled]="
+            createForm.controls['name'].invalid &&
+            (createForm.controls['name'].dirty ||
+              createForm.controls['name'].touched)
+          "
+          [ngClass]="{
+            shake:
+              createForm.controls['name'].invalid &&
+              (createForm.controls['name'].dirty ||
+                createForm.controls['name'].touched)
+          }"
+        >
+          <mat-label>Name</mat-label>
+          <input formControlName="name" matInput />
+          <mat-icon
+            *ngIf="
+              createForm.controls['name'].invalid &&
+              (createForm.controls['name'].dirty ||
+                createForm.controls['name'].touched)
+            "
+            matSuffix
+            fontIcon="error"
+          ></mat-icon>
+        </mat-form-field>
+  
+        <mat-form-field
+          appearance="outline"
+          [matTooltip]="getAddressErrorMessage()"
+          [matTooltipDisabled]="
+            createForm.controls['address'].invalid &&
+            (
+              createForm.controls['address'].dirty ||
+              createForm.controls['address'].touched
+            )
+          "
+          [ngClass]="{
+            shake:
+              createForm.controls['address'].invalid &&
+              (createForm.controls['address'].dirty ||
+                createForm.controls['address'].touched)
+          }"
+        >
+          <mat-label>Address</mat-label>
+          <input formControlName="address" matInput />
+          <mat-icon
+            *ngIf="
+              createForm.controls['address'].invalid &&
+              (createForm.controls['address'].dirty ||
+                createForm.controls['address'].touched)
+            "
+            matSuffix
+            fontIcon="error"
+          ></mat-icon>
+        </mat-form-field>
+  
+        <mat-form-field
+          appearance="outline"
+          [matTooltip]="getEmailErrorMessage()"
+          [matTooltipDisabled]="
+            !createForm.controls['email'].invalid
+          "
+          [ngClass]="{
+            shake:
+              createForm.controls['email'].invalid &&
+              (createForm.controls['email'].dirty ||
+                createForm.controls['email'].touched)
+          }"
+        >
+          <mat-label>Email</mat-label>
+          <input formControlName="email" matInput />
+          <mat-icon
+            *ngIf="
+              createForm.controls['email'].invalid &&
+              (createForm.controls['email'].dirty ||
+                createForm.controls['email'].touched)
+            "
+            matSuffix
+            fontIcon="error"
+          ></mat-icon>
+        </mat-form-field>
+      </form>
+    </div>
+    <div class="form-group"></div>
+    <div mat-dialog-actions class="actions-container">
+      <button mat-raised-button color="warn" (click)="onNoClick()">Exit</button>
+      <button mat-raised-button color="primary" (click)="onSubmit()">
+        Update
+      </button>
+    </div>
+  </div>
+  

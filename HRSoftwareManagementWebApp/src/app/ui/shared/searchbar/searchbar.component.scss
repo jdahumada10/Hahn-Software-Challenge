@@ -1,0 +1,87 @@
+.wrapper {
+  height: 100%;
+  margin: 20px;
+}
+
+.search-area {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.single-search {
+  margin-bottom: auto;
+  margin-top: auto;
+  height: 60px;
+  background-color: #b52549;
+  border-radius: 100px;
+  padding: 10px;
+  box-shadow: 0 8px 10px #7e2732;
+}
+
+.custom-input {
+  visibility: hidden;
+  border: 0;
+  outline: 0;
+  width: 0px;
+  height: 70px;
+  line-height: 10px;
+  transition: width 0.4s linear;
+}
+
+input::placeholder {
+  color: white;
+  font-size: 20px;
+}
+
+.icon-area {
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  float: right;
+  display: flex;
+  text-decoration: none;
+  color: white;
+}
+
+.single-search:hover > .custom-input {
+  visibility: visible;
+  padding: 0 10px;
+  width: 300px;
+  caret-color: white;
+  transition: width 0.4s linear;
+}
+
+.single-search:hover > .icon-area {
+  background: #b52549;
+  color: #b52549;
+}
+
+.form-field {
+  visibility: visible;
+  border: 0;
+  outline: 0;
+  width: 0;
+  line-height: 10px;
+  transition: width 0.4s linear;
+}
+
+::ng-deep .mat-form-field-wrapper {
+  height: 70px;
+}
+
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: #b52549;
+}
+
+::ng-deep .mdc-text-field:not(.mdc-text-field--disabled) {
+  .mdc-floating-label {
+    color: white;
+  }
+  .mdc-text-field__input {
+    color: white;
+  }
+
+}

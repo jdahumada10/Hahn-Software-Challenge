@@ -1,0 +1,147 @@
+<div class="outer-div">
+  <h1 class="title-text">Create Applicant</h1>
+  <div class="container-fluid">
+    <form [formGroup]="createForm">
+      <mat-form-field
+        appearance="outline"
+        [matTooltip]="getFirstNameErrorMessage()"
+        [matTooltipDisabled]="
+          createForm.controls['firstName'].invalid &&
+          (createForm.controls['firstName'].dirty ||
+            createForm.controls['firstName'].touched)
+        "
+        [ngClass]="{
+          shake:
+            createForm.controls['firstName'].invalid &&
+            (createForm.controls['firstName'].dirty ||
+              createForm.controls['firstName'].touched)
+        }"
+      >
+        <mat-label>First Name</mat-label>
+        <input formControlName="firstName" matInput />
+        <mat-icon
+          *ngIf="
+            createForm.controls['firstName'].invalid &&
+            (createForm.controls['firstName'].dirty ||
+              createForm.controls['firstName'].touched)
+          "
+          matSuffix
+          fontIcon="error"
+        ></mat-icon>
+      </mat-form-field>
+
+      <mat-form-field
+        appearance="outline"
+        [matTooltip]="getLastNameErrorMessage()"
+        [matTooltipDisabled]="
+          createForm.controls['lastName'].invalid &&
+          (createForm.controls['lastName'].dirty ||
+            createForm.controls['lastName'].touched)
+        "
+        [ngClass]="{
+          shake:
+            createForm.controls['lastName'].invalid &&
+            (createForm.controls['lastName'].dirty ||
+              createForm.controls['lastName'].touched)
+        }"
+      >
+        <mat-label>Last Name</mat-label>
+        <input formControlName="lastName" matInput />
+        <mat-icon
+          *ngIf="
+            createForm.controls['lastName'].invalid &&
+            (createForm.controls['lastName'].dirty ||
+              createForm.controls['lastName'].touched)
+          "
+          matSuffix
+          fontIcon="error"
+        ></mat-icon>
+      </mat-form-field>
+
+      <mat-form-field
+        appearance="outline"
+        [matTooltip]="getRoleErrorMessage()"
+        [matTooltipDisabled]="
+          createForm.controls['role'].invalid &&
+          (createForm.controls['role'].dirty ||
+            createForm.controls['role'].touched)
+        "
+        [ngClass]="{
+          shake:
+            createForm.controls['role'].invalid &&
+            (createForm.controls['role'].dirty ||
+              createForm.controls['role'].touched)
+        }"
+      >
+        <mat-label>Role</mat-label>
+        <input formControlName="role" matInput />
+        <mat-icon
+          *ngIf="
+            createForm.controls['role'].invalid &&
+            (createForm.controls['role'].dirty ||
+              createForm.controls['role'].touched)
+          "
+          matSuffix
+          fontIcon="error"
+        ></mat-icon>
+      </mat-form-field>
+
+      <mat-form-field
+        appearance="outline"
+        [matTooltip]="getContactInfoErrorMessage()"
+        [matTooltipDisabled]="!createForm.controls['contactInfo'].invalid"
+        [ngClass]="{
+          shake:
+            createForm.controls['contactInfo'].invalid &&
+            (createForm.controls['contactInfo'].dirty ||
+              createForm.controls['contactInfo'].touched)
+        }"
+      >
+        <mat-label>Contact Info</mat-label>
+        <input formControlName="contactInfo" matInput />
+        <mat-icon
+          *ngIf="
+            createForm.controls['contactInfo'].invalid &&
+            (createForm.controls['contactInfo'].dirty ||
+              createForm.controls['contactInfo'].touched)
+          "
+          matSuffix
+          fontIcon="error"
+        ></mat-icon>
+      </mat-form-field>
+
+      <mat-form-field
+      appearance="outline"
+      [matTooltip]="getStatusErrorMessage()"
+      [matTooltipDisabled]="!createForm.controls['status'].invalid"
+      [ngClass]="{
+        shake:
+          createForm.controls['status'].invalid &&
+          (createForm.controls['status'].dirty ||
+            createForm.controls['status'].touched)
+      }"
+    >
+    <mat-label>Select a status</mat-label>
+        <mat-select formControlName="status"> 
+          <mat-option *ngFor="let status of processStatus" [value]="status">{{status}}</mat-option>
+        </mat-select>
+      <mat-icon
+        *ngIf="
+          createForm.controls['status'].invalid &&
+          (createForm.controls['status'].dirty ||
+            createForm.controls['status'].touched)
+        "
+        matSuffix
+        fontIcon="error"
+      ></mat-icon>
+    </mat-form-field>
+    </form>
+  </div>
+  <div class="form-group"></div>
+  <div mat-dialog-actions class="actions-container">
+    <button mat-raised-button color="warn" (click)="onNoClick()">Exit</button>
+    <button mat-raised-button color="primary" (click)="onSubmit()">
+      Create
+    </button>
+  </div>
+</div>

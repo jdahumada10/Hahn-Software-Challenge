@@ -1,0 +1,99 @@
+.title-text {
+    color: white;
+  }
+  
+  .outer-div {
+    display: flex;
+    background-color: #020833;
+    height: 100%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #b52549;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .actions-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+  
+    button {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
+  
+  ::ng-deep .mdc-tooltip__surface {
+    background-color: #b52549 !important;
+    color: white !important;
+  }
+  
+  ::ng-deep form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  
+    mat-icon {
+      color: #b52549;
+    }
+  
+    .mat-mdc-select-value-text{
+      color: white;
+    }
+  
+    .shake {
+      animation: horizontal-shaking 0.35s;
+    }
+  
+    @keyframes horizontal-shaking {
+      0% {
+        transform: translateX(0);
+      }
+      25% {
+        transform: translateX(5px);
+      }
+      50% {
+        transform: translateX(-5px);
+      }
+      75% {
+        transform: translateX(5px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+  
+    .mat-mdc-form-field {
+      width: 70%;
+    }
+  
+    .mdc-text-field .mdc-text-field__input {
+      caret-color: white !important;
+    }
+  
+    .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+      .mdc-notched-outline__leading {
+      border-color: #b52549 !important;
+    }
+  
+    .mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field
+      .mdc-notched-outline__notch {
+      border-color: #b52549 !important;
+    }
+    .mdc-text-field--outlined
+      .mdc-notched-outline
+      .mdc-notched-outline__trailing {
+      border-color: #b52549 !important;
+    }
+  }
+  

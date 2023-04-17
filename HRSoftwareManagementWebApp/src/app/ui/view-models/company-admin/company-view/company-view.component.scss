@@ -1,0 +1,117 @@
+.searchbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: row-reverse;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.title {
+  margin-left: 30px;
+}
+
+table {
+  height: 100%;
+}
+
+.table-container {
+  height: calc(100% - 156px);
+  position: relative;
+}
+
+.company-action {
+  color: #b52549;
+  margin-left: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+button {
+  box-shadow: 0 8px 10px #7e2732;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+}
+
+::ng-deep {
+  .mat-mdc-table .mdc-data-table__row {
+    background-color: #020833;
+  }
+
+  .mdc-data-table__cell,
+  .mdc-data-table__header-cell {
+    border-bottom-color: #b52549;
+  }
+
+  .mat-mdc-table .mdc-data-table__header-row {
+    background-color: #b52549;
+  }
+
+  .mat-mdc-header-cell {
+    color: white;
+  }
+
+  .mat-mdc-cell {
+    color: white;
+  }
+
+  .mat-sort-header-arrow {
+    color: white !important;
+  }
+
+  .mat-mdc-paginator-outer-container {
+    background-color: #b52549;
+    color: white;
+  }
+
+  .mat-mdc-select-arrow svg {
+    color: white;
+  }
+
+  .mat-mdc-table:hover .mdc-data-table__row:hover {
+    background-color: #7e1732;
+    .company-action {
+      color: white;
+    }
+  }
+
+  .mat-mdc-fab.mat-accent,
+  .mat-mdc-mini-fab.mat-accent {
+    --mdc-fab-container-color: #b52549;
+    width: 60px;
+    height: 60px;
+  }
+
+  .mdc-text-field .mdc-text-field__input {
+    caret-color: white !important;
+  }
+
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+    .mdc-notched-outline__leading {
+    border-color: white !important;
+  }
+
+  .mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field.mat-mdc-form-field
+    .mdc-notched-outline__notch {
+    border-color: white !important;
+  }
+
+  .mdc-text-field--outlined
+    .mdc-notched-outline
+    .mdc-notched-outline__trailing {
+    border-color: white !important;
+  }
+}

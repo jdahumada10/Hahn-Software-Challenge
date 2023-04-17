@@ -1,0 +1,16 @@
+.navbar-image {
+  width: 120px;
+  height: 120px;
+  margin-left: 120px;
+}
+
+ul {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr repeat(3, auto) 1fr;
+  grid-column-gap: 5px;
+  align-items: center;
+}
+
+li:nth-child(1) { grid-column-start: 1; }
+li:nth-child(3) { margin-left: auto; }
