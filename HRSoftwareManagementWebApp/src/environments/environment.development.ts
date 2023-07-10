@@ -1,4 +1,4 @@
 export const environment = {
-    companyApiUrl: 'https://localhost:7176/api/v1/companies',
-    applicantApiUrl: 'https://localhost:7176/api/v1/applicants',
+    companyApiUrl: 'http://localhost:5005/api/v1/companies',
+    applicantApiUrl: 'http://localhost:5005/api/v1/applicants',
 };

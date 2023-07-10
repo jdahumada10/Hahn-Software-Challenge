@@ -48,22 +48,20 @@ builder.Services.AddCors(options =>
     options.AddPolicy(allowSpecificOrigins,
         policy =>
         {
-            policy.WithOrigins("http://localhost:4200")
+            policy.AllowAnyOrigin()
                 .AllowAnyHeader()
                 .AllowAnyMethod();
         });
 });
+builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
-using (var scope = app.Services.CreateScope())
+    using (var scope = app.Services.CreateScope())
 {
     var companyContext = scope.ServiceProvider.GetRequiredService<CompanyContext>();
     companyContext.Database.EnsureCreated();

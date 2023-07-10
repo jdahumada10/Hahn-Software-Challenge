@@ -1,0 +1,34 @@
+version: "3.4"
+
+services:
+    api:
+        build:
+          context: HRSoftwareManagementAPI
+          dockerfile: Dockerfile
+        ports:
+          - "5005:5005"
+        depends_on:
+          - db
+        container_name: "backend-dotnet6"
+
+    db:
+        image: "mcr.microsoft.com/azure-sql-edge"
+        ports:
+          - "1433:1433"
+
+        environment:
+            ACCEPT_EULA: "1"
+            MSSQL_USER: "SA"
+            MSSQL_SA_PASSWORD: "SQL-server-password"
+            MSSQL_PID: "Developer"
+        container_name: "database-sqlserver"
+
+    ui:
+        container_name: "ui-angular"
+        ports:
+          - "4401:80"
+        build: 
+            context: HRSoftwareManagementWebApp
+            dockerfile: Dockerfile
+        depends_on:
+          - api
